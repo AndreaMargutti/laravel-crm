@@ -14,18 +14,37 @@
 
             body {
                 font-family: 'Enriqueta', sans-serif;
-                background-color: black;
+                background-color: #111827;
             }
             .log {
                 height: 100vh;
             }
 
-            a {
-                position: relative;
+            div {
+                position: absolute;
                 top: 50%;
                 left: 50%;
-                text-decoration: none;
+                transform: translate(-50%, -50%);
+                text-align: center;
+            }
+
+            h1 {
+                color: red;
+                padding: 20px;
+                border: 2px dotted red;
+            }
+
+            a {
+                display: block;
+                text-decoration: underline;
                 color: white;
+                padding-top: 2rem;
+                font-size: 2rem;
+                font-weight: 700;
+            }
+
+            .logo {
+                height: 200px;
             }
 
         </style>
@@ -37,13 +56,19 @@
                 @auth
                     <a href="{{ url('/dashboard') }}">Dashboard</a>
                 @else
+                <div>
+
+                    <x-application-logo class="logo"/>
+                    <h1>Laravel-CRM</h1>
                     <a href="{{ route('login') }}">Log in</a>
 
                     {{-- @if (Route::has('register'))
-                        <a href="{{ route('register') }}">Register</a>
+                    <a href="{{ route('register') }}">Register</a>
                     @endif --}}
-                @endauth
+                    @endauth
+                </div>
             </div>
         @endif
     </body>
 </html>
+
