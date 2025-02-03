@@ -13,10 +13,10 @@ return new class extends Migration
     {
         Schema::create('employees', function (Blueprint $table) {
             $table->id();
-            $table->first_name();
-            $table->last_name();
-            $table->phone();
-            $table->email();
+            $table->string('first_name');
+            $table->string('last_name');
+            $table->string('phone_number');
+            $table->string('email');
             $table->foreignId('enterprise_id')->constrained();
             $table->timestamps();
         });

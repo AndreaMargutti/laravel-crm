@@ -13,9 +13,9 @@ return new class extends Migration
     {
         Schema::create('enterprises', function (Blueprint $table) {
             $table->id();
-            $table->name();
-            $table->logo();
-            $table->pIva();
+            $table->string('name');
+            $table->string('logos');
+            $table->string('pIva');
             $table->timestamps();
         });
     }
